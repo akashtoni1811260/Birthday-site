@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Happy Birthday</title>
+  <meta name="theme-color" content="#141414" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="locked">
+
+  <!-- Who's watching? -->
+  <section class="profiles" id="profiles" aria-label="Choose a profile">
+    <p class="logo profiles-brand" id="profilesBrand"></p>
+    <div class="profiles-inner">
+      <h1 id="profilesTitle"></h1>
+      <div class="profile-list" id="profileList"></div>
+      <button class="manage" type="button">Manage Profiles</button>
+    </div>
+  </section>
+
+  <!-- Intro animation after choosing a profile -->
+  <div class="splash" id="splash" hidden><span class="logo" id="splashLogo"></span></div>
+
+  <div id="site">
+    <header class="nav" id="nav">
+      <a class="logo" href="#top" id="brand"></a>
+      <nav id="navLinks" aria-label="Sections"></nav>
+      <div class="nav-right">
+        <svg class="ico stroke" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l6 6"/></svg>
+        <svg class="ico stroke bell" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 17v-6a6 6 0 0 1 12 0v6l2 2H4zM10 21.500h4"/></svg>
+        <button class="nav-profile" id="navProfile" aria-label="Switch profile" title="Switch profile"></button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-bg" id="heroBg"></div>
+        <div class="hero-shade"></div>
+        <div class="hero-copy">
+          <p class="welcome" id="welcome"></p>
+          <p class="badge" id="heroBadge"></p>
+          <h1 id="heroName"></h1>
+          <p class="toptag" id="heroTop"></p>
+          <p class="hero-tags" id="heroTags"></p>
+          <p class="hero-desc" id="heroDesc"></p>
+          <div class="hero-actions">
+            <button class="btn btn-play" id="playBtn"></button>
+            <button class="btn btn-info" id="infoBtn"></button>
+          </div>
+        </div>
+        <div class="rating" id="heroRating"></div>
+      </section>
+
+      <div class="rows" id="rows"></div>
+
+      <section class="finale" id="final">
+        <h2 id="finalTitle"></h2>
+        <p id="finalText"></p>
+        <p class="sign" id="finalSign"></p>
+        <button class="btn btn-play" id="confettiBtn">Celebrate &#127881;</button>
+      </section>
+    </main>
+
+    <footer class="foot"><a href="#top">Back to top</a></footer>
+
+    <!-- Mobile bottom tab bar -->
+    <nav class="tabbar" aria-label="Tabs">
+      <a href="#top"><svg viewBox="0 0 24 24"><path d="M12 3l9 8h-3v9h-5v-6h-2v6H6v-9H3z"/></svg>Home</a>
+      <a href="#popular" id="tabMem"><svg viewBox="0 0 24 24"><path d="M4 4h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm3 2H5v2h2zm0 4H5v2h2zm0 4H5v2h2zm12-8h-2v2h2zm0 4h-2v2h2zm0 4h-2v2h2zM9 6v12h6V6z"/></svg>Memories</a>
+      <a href="#final"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.500 7 .8-5.200 4.800 1.500 7L12 17.500 5.700 21.100l1.500-7L2 9.300l7-.8z"/></svg>Special</a>
+      <button id="tabMe" type="button"><svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-5 0-9 2.500-9 6v2h18v-2c0-3.500-4-6-9-6z"/></svg>Profile</button>
+    </nav>
+  </div>
+
+  <!-- More Info modal -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-x" id="modalX" aria-label="Close">&times;</button>
+      <div class="modal-hero" id="modalHero">
+        <div class="modal-hero-in">
+          <h2 class="logo" id="modalTitle"></h2>
+          <button class="btn btn-play" id="modalPlay"></button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div>
+          <p class="meta" id="modalMeta"></p>
+          <p class="tagline" id="modalTag"></p>
+          <p id="modalDesc"></p>
+        </div>
+        <div class="side" id="modalSide"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Photo viewer -->
+  <div class="lightbox" id="lightbox" hidden>
+    <div class="lb-controls" id="lbControls">
+      <button id="lbPause" type="button" aria-label="Pause"></button>
+      <button id="lbMute" type="button" aria-label="Mute"></button>
+    </div>
+    <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+    <figure>
+      <img id="lbImg" alt="" />
+      <figcaption id="lbCap"></figcaption>
+    </figure>
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next">&#8250;</button>
+  </div>
+
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
