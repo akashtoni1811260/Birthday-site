@@ -41,7 +41,7 @@ const SITE = {
         { src: "assets/img_1.jpg", caption: "Season 26, dressed in grace with a little extra sparkle" },
         { src: "assets/img_2.jpg", caption: "Main character energy" },
         { src: "assets/img_3.jpg", caption: "The occasion was special, but so was the outfit. ✨" },
-        { src: "assets/img_4.jpg.png", caption: "Dressed like a dream, living my own fairytale" },
+        { src: "assets/img_4.jpg", caption: "Dressed like a dream, living my own fairytale" },
         { src: "assets/img_5.jpg", caption: "A little extra glam never hurt anybody" }
       ],
     },
